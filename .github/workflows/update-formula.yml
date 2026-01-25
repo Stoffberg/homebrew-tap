@@ -26,6 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PUSH_TOKEN }}
 
       - name: Set variables from dispatch
         id: vars
@@ -46,7 +48,7 @@ jobs:
 
       - name: Update formula
         run: |
-          cat > Formula/shrd.rb << 'EOF'
+          cat > Formula/shrd.rb << EOF
           class Shrd < Formula
             desc "Share anything instantly - CLI-first content sharing"
             homepage "https://github.com/Stoffberg/shrd.sh"
@@ -90,5 +92,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add Formula/shrd.rb
-          git commit -m "Update shrd to v${{ steps.vars.outputs.version }}"
+          git commit -m "Update shrd to v${{ steps.vars.outputs.version }}" || echo "No changes to commit"
           git push
