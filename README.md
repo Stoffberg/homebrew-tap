@@ -1,12 +1,19 @@
 # Homebrew Tap
 
-Homebrew formulae for [shrd](https://github.com/Stoffberg/shrd.sh).
+Homebrew formulae and casks from [Stoffberg](https://github.com/Stoffberg).
+
+## Available
+
+| Name | Type | Description |
+|------|------|-------------|
+| [shrd](https://github.com/Stoffberg/shrd.sh) | Formula | CLI content sharing |
+| [record](https://github.com/Stoffberg/record) | Cask | Privacy-first activity tracker for macOS |
 
 ## Installation
 
 ```bash
-brew tap Stoffberg/tap
-brew install shrd
+brew install stoffberg/tap/shrd
+brew install stoffberg/tap/record
 ```
 
 ## Update
@@ -14,4 +21,5 @@ brew install shrd
 ```bash
 brew update
 brew upgrade shrd
+brew upgrade record
 ```
