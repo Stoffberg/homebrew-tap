@@ -38,35 +38,9 @@ jobs:
 
       - name: Update cask
         run: |
-          mkdir -p Casks
-          cat > Casks/record.rb << 'CASK'
-          cask "record" do
-            version "VERSION_PLACEHOLDER"
-            license "MIT"
-
-            on_intel do
-              sha256 "X64_SHA_PLACEHOLDER"
-              url "https://github.com/Stoffberg/record/releases/download/v#{version}/Record_#{version}_x64.dmg"
-            end
-            on_arm do
-              sha256 "ARM64_SHA_PLACEHOLDER"
-              url "https://github.com/Stoffberg/record/releases/download/v#{version}/Record_#{version}_aarch64.dmg"
-            end
-
-            name "Record"
-            desc "Privacy-first activity tracker for macOS"
-            homepage "https://github.com/Stoffberg/record"
-
-            app "Record.app"
-
-            zap trash: [
-              "~/Library/Application Support/dev.stoff.record",
-            ]
-          end
-          CASK
-          sed -i "s/VERSION_PLACEHOLDER/${{ steps.vars.outputs.version }}/g" Casks/record.rb
-          sed -i "s/ARM64_SHA_PLACEHOLDER/${{ steps.vars.outputs.arm64_sha }}/g" Casks/record.rb
-          sed -i "s/X64_SHA_PLACEHOLDER/${{ steps.vars.outputs.x64_sha }}/g" Casks/record.rb
+          sed -i 's/version ".*"/version "${{ steps.vars.outputs.version }}"/' Casks/record.rb
+          sed -i '0,/sha256 ".*"/{s/sha256 ".*"/sha256 "${{ steps.vars.outputs.x64_sha }}"/}' Casks/record.rb
+          sed -i '/on_arm/,/end/{s/sha256 ".*"/sha256 "${{ steps.vars.outputs.arm64_sha }}"/}' Casks/record.rb
 
       - name: Commit and push
         run: |

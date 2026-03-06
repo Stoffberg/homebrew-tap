@@ -1,6 +1,5 @@
 cask "record" do
   version "0.1.0"
-  license "MIT"
 
   on_intel do
     sha256 "2331cbdf04d36b278075899db75e2b77470bfe3d84c3fb49a86789cc806aaa5d"
