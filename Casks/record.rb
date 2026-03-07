@@ -1,12 +1,12 @@
 cask "record" do
-  version "0.1.0"
+  version "0.3.0"
 
   on_intel do
-    sha256 "2331cbdf04d36b278075899db75e2b77470bfe3d84c3fb49a86789cc806aaa5d"
+    sha256 "1014219aff6978d0b20d757516e373e73b73fc839c78fd8c4f30558afd13c80a"
     url "https://github.com/Stoffberg/record/releases/download/v#{version}/Record_#{version}_x64.dmg"
   end
   on_arm do
-    sha256 "806cdd484448b9d170dab726daade7f1a14dc7d611a4b5e926a14edc97fa6b59"
+    sha256 "b85f978139103dc977d3e486f2962a714ffdbd3a398824b8c794f0bd62d1bbe4"
     url "https://github.com/Stoffberg/record/releases/download/v#{version}/Record_#{version}_aarch64.dmg"
   end
 
