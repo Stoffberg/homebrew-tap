@@ -1,28 +1,28 @@
 class Shrd < Formula
   desc "Share anything instantly - CLI-first content sharing"
   homepage "https://github.com/Stoffberg/shrd.sh"
-  version "0.1.8"
+  version "0.1.9"
   license "MIT"
 
   on_macos do
     on_intel do
       url "https://github.com/Stoffberg/shrd.sh/releases/download/cli-v#{version}/shrd-x86_64-apple-darwin.tar.gz"
-      sha256 "7c99eaf9d1912b55108630cc6d4042ed2be25ba9f554fd29e9cf9a6745d24fd2"
+      sha256 "293e43268ef23f9fa408b253d7003b348ea0a032e261b897036a8118520662bc"
     end
     on_arm do
       url "https://github.com/Stoffberg/shrd.sh/releases/download/cli-v#{version}/shrd-aarch64-apple-darwin.tar.gz"
-      sha256 "ad0bf876945a28569a5a65cbd1cc4f9dad1c153cba6398ddef136d17a7d860a6"
+      sha256 "75c5b9eed4c67e277b246a821fb6790bf87cb3de9c4dda5e2451c95621468763"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Stoffberg/shrd.sh/releases/download/cli-v#{version}/shrd-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "2b8f9f88628ecc779e5682583aa8fec15111a597e0ceb7f13b5d90a68adb60e7"
+      sha256 "8c0f844071c0bc81ed98d9e2ca1b647652c6490d557ad46265644e5f033f4d8e"
     end
     on_arm do
       url "https://github.com/Stoffberg/shrd.sh/releases/download/cli-v#{version}/shrd-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "413ce922b29cfd7eec63312f64d13078b5b2fbff500f3b9dd1938a75235f956f"
+      sha256 "e8df96805890ca424381b67f38d59edb5742cda07f7a4823144797e2a4d3845e"
     end
   end
 
